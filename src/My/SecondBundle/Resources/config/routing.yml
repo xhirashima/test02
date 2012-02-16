@@ -1,0 +1,3 @@
+MySecondBundle_homepage:
+    pattern:  /user/new
+    defaults: { _controller: MySecondBundle:User:new }

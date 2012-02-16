@@ -1,0 +1,31 @@
+My\TestBundle\Entity\Equipmentgroup:
+  type: entity
+  table: EquipmentGroup
+  fields:
+    equipmentGroupId:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      column: equipment_group_id
+      generator:
+        strategy: IDENTITY
+    hierarchy:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    name:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+  manyToMany:
+    authuser:
+      targetEntity: Authuser
+      cascade: {  }
+      mappedBy: equipmentGroup
+      inversedBy: null
+      joinTable: null
+      orderBy: null
+  lifecycleCallbacks: {  }

@@ -1,0 +1,48 @@
+My\TestBundle\Entity\Rental:
+  type: entity
+  table: Rental
+  fields:
+    rentalId:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      column: rental_id
+      generator:
+        strategy: IDENTITY
+    planstartday:
+      type: datetime
+      nullable: true
+      column: PlanStartDay
+    planendday:
+      type: datetime
+      nullable: true
+      column: PlanEndDay
+    decisionstartday:
+      type: datetime
+      nullable: true
+      column: DecisionStartDay
+    decisionendday:
+      type: datetime
+      nullable: true
+      column: DecisionEndDay
+  oneToOne:
+    tuseuserAuthuser:
+      targetEntity: Authuser
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        tuseuser_authuser_id:
+          referencedColumnName: authuser_id
+      orphanRemoval: false
+    equipment:
+      targetEntity: Equipment
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        equipment_id:
+          referencedColumnName: equipment_id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

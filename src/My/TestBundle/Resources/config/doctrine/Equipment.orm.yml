@@ -1,0 +1,28 @@
+My\TestBundle\Entity\Equipment:
+  type: entity
+  table: Equipment
+  fields:
+    equipmentId:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      column: equipment_id
+      generator:
+        strategy: IDENTITY
+    name:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+  oneToOne:
+    equipmentGroup:
+      targetEntity: Equipmentgroup
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        equipment_group_id:
+          referencedColumnName: equipment_group_id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

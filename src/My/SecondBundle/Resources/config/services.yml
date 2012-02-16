@@ -1,0 +1,7 @@
+parameters:
+#    my_second.example.class: My\SecondBundle\Example
+
+services:
+#    my_second.example:
+#        class: %my_second.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
